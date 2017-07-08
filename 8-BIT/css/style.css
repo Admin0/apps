@@ -107,14 +107,43 @@ footer a:hover {text-decoration: none; color: #fff; }
 footer a img		{ transition:.25s; }
 footer a img:hover	{ opacity: 1; }
 
-
-
-
 /* ------------------------------------------------------------------- */
-/* ***** tistory ***** */
+/* ***** tooltip ***** */
 /* ------------------------------------------------------------------- */
 
-#tistorytoolbarid	{ display: none; }
+#tooltip,
+#tooltip_nav {
+    color: #fff;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    background: #212121;
+    -webkit-transition: .5s opacity;
+    transition: .5s opacity;
+    padding: 1ex;
+    border-radius: 3px;
+    max-width: 400px;
+    z-index: 3;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
+}
+#tooltip_nav { position: fixed; z-index: 4; }
+
+#tooltip_before,
+#tooltip_nav_before {
+    border-color: #212121 transparent transparent;
+    border-width: 1ex 1ex 0;
+    border-style: solid;
+    content: " ";
+    position: absolute;
+    left: calc(50% - .5em);
+    bottom: -.9ex
+}
+
+#tooltip_text {
+    white-space: pre-line;
+}
 
 
 /* ------------------------------------------------------------------- */
