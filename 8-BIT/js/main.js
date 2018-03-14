@@ -93,9 +93,10 @@ $(window).scroll(function() {
   var sec3_height = (sec2_height + $('#sec3').outerHeight());
 
   function scroll_animation() {
-    if (pageYOffset > sec0_height + animation_ready && pageYOffset <= sec1_height + animation_ready) { //sec1
+    if (pageYOffset > sec0_height + animation_ready) {
       $('#phone').css({
-        'top': sec0_height + 'px'
+        'position': 'fixed',
+        'top': ($(window).height() - $('#phone').height()) / 2 + 'px'
       });
       $('#img_f2').fadeOut();
       $('#img_f3').fadeOut();
@@ -105,49 +106,69 @@ $(window).scroll(function() {
         'opacity': '1',
         'padding-left': '360px'
       });
-    }
-
-    if (pageYOffset > sec1_height + animation_ready && pageYOffset <= sec2_height + animation_ready) { //sec2
+    } else {
       $('#phone').css({
-        'top': sec1_height + 'px'
-      });
-      $('#img_f1').fadeOut();
-      $('#img_f3').fadeOut();
-      $('#img_f2').fadeIn();
-
-      $('#feature2').css({
-        'opacity': '1',
-        'padding-left': '360px'
-      });
-      if ($('#icons_num').text() == "2800") {
-        new numberCounter("icons_num", 2800);
-      }
-    }
-
-    if (pageYOffset > sec2_height + animation_ready && pageYOffset <= sec3_height + animation_ready) { //sec3
-      $('#phone').css({
-        'top': sec2_height + 'px'
-      });
-      $('#img_f1').fadeOut();
-      $('#img_f2').fadeOut();
-      $('#img_f3').fadeIn();
-
-      $('#feature3').css({
-        'opacity': '1',
-        'padding-left': '360px'
+        'position': 'absolute'
       });
     }
 
-    if (pageYOffset > sec3_height + animation_ready) { //sec4
-      $('#feature_down').css({
-        'opacity': '1',
-        'margin': '0'
-      });
-      $('.reviews').delay(800).css({
-        'opacity': '1',
-        'margin': '0 0 3em 0'
-      });
-    }
+
+
+    // if (pageYOffset > sec0_height + animation_ready && pageYOffset <= sec1_height + animation_ready) { //sec1
+    //   $('#phone').css({
+    //     'top': sec0_height + 'px'
+    //   });
+    //   $('#img_f2').fadeOut();
+    //   $('#img_f3').fadeOut();
+    //   $('#img_f1').fadeIn();
+    //
+    //   $('#feature1').css({
+    //     'opacity': '1',
+    //     'padding-left': '360px'
+    //   });
+    // }
+    //
+    // if (pageYOffset > sec1_height + animation_ready && pageYOffset <= sec2_height + animation_ready) { //sec2
+    //   $('#phone').css({
+    //     'top': sec1_height + 'px'
+    //   });
+    //   $('#img_f1').fadeOut();
+    //   $('#img_f3').fadeOut();
+    //   $('#img_f2').fadeIn();
+    //
+    //   $('#feature2').css({
+    //     'opacity': '1',
+    //     'padding-left': '360px'
+    //   });
+    //   if ($('#icons_num').text() == "2800") {
+    //     new numberCounter("icons_num", 2800);
+    //   }
+    // }
+    //
+    // if (pageYOffset > sec2_height + animation_ready && pageYOffset <= sec3_height + animation_ready) { //sec3
+    //   $('#phone').css({
+    //     'top': sec2_height + 'px'
+    //   });
+    //   $('#img_f1').fadeOut();
+    //   $('#img_f2').fadeOut();
+    //   $('#img_f3').fadeIn();
+    //
+    //   $('#feature3').css({
+    //     'opacity': '1',
+    //     'padding-left': '360px'
+    //   });
+    // }
+    //
+    // if (pageYOffset > sec3_height + animation_ready) { //sec4
+    //   $('#feature_down').css({
+    //     'opacity': '1',
+    //     'margin': '0'
+    //   });
+    //   $('.reviews').delay(800).css({
+    //     'opacity': '1',
+    //     'margin': '0 0 3em 0'
+    //   });
+    // }
   }
   if ($(window).width() >= 600) {
     scroll_animation();
