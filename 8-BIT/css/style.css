@@ -2,12 +2,14 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import url('https://fonts.googleapis.com/css?family=Roboto:700,400,300,100');
 @import url('https://fonts.googleapis.com/css?family=Baumans');
-
-
 /* for old IE */
 
 section, article, aside, footer, header, nav, hgroup {
   display: block;
+}
+
+::selection {
+  background: rgba(0, 0, 0, 0);
 }
 
 body {
@@ -68,6 +70,7 @@ header {
 .sections {
   width: 100%;
   padding: 3em 0;
+  min-height: 300px;
 }
 
 #sec0 {
@@ -206,7 +209,6 @@ header {
 
 #sec1 {
   background: #e5e5e5;
-  min-height: 1024px;
 }
 
 #feature1 {
@@ -219,7 +221,6 @@ header {
 
 #sec2 {
   background: #ddd;
-  min-height: 1024px;
 }
 
 #feature2 {
@@ -237,7 +238,6 @@ header {
 
 #sec3 {
   background: #d5d5d5;
-  min-height: 1024px;
 }
 
 #feature3 {
@@ -274,7 +274,7 @@ header {
 }
 
 #sec_updatelog {
-	font-family: 'roboto';
+  font-family: 'roboto';
   display: none;
   width: 400px;
   margin: auto;
@@ -363,12 +363,9 @@ footer a img:hover {
   opacity: 1;
 }
 
-
 /* ------------------------------------------------------------------- */
 
-
 /* ***** tooltip ***** */
-
 
 /* ------------------------------------------------------------------- */
 
@@ -409,12 +406,9 @@ footer a img:hover {
   white-space: pre-line;
 }
 
-
 /* ------------------------------------------------------------------- */
 
-
 /* ***** mobile ***** */
-
 
 /* ------------------------------------------------------------------- */
 

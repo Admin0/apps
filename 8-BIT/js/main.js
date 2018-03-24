@@ -85,7 +85,8 @@ $(window).scroll(function() {
   }
   //$('#feature1').html(pageYOffset + ', ' + ($('header').outerHeight() + $('#sec1').outerHeight()));
 
-  var animation_ready = 300 - $(window).height();
+  var animation_ready = 300 - $(window).height() / 2;
+  var animation_ready_buffer = -500;
 
   var sec0_height = ($('header').outerHeight() + $('#sec0').outerHeight());
   var sec1_height = (sec0_height + $('#sec1').outerHeight());
@@ -96,7 +97,7 @@ $(window).scroll(function() {
     if (pageYOffset > sec0_height + animation_ready) {
       $('#phone').css({
         'position': 'fixed',
-        'top': ($(window).height() - $('#phone').height()) / 2 + 'px'
+        'top': ($(window).height() - $('#phone').height()) / 2 + 100 + 'px'
       });
       $('#img_f2').fadeOut();
       $('#img_f3').fadeOut();
@@ -108,67 +109,66 @@ $(window).scroll(function() {
       });
     } else {
       $('#phone').css({
-        'position': 'absolute'
+        'position': 'absolute',
+        'top': 'initial'
       });
     }
 
+    if (pageYOffset > sec0_height + animation_ready + animation_ready_buffer && pageYOffset <= sec1_height + animation_ready + animation_ready_buffer) { //sec1
+      // $('#phone').css({
+      //   'top': sec0_height + 'px'
+      // });
+      $('#img_f2').fadeOut();
+      $('#img_f3').fadeOut();
+      $('#img_f1').fadeIn();
 
+      $('#feature1').css({
+        'opacity': '1',
+        'padding-left': '360px'
+      });
+    }
 
-    // if (pageYOffset > sec0_height + animation_ready && pageYOffset <= sec1_height + animation_ready) { //sec1
-    //   $('#phone').css({
-    //     'top': sec0_height + 'px'
-    //   });
-    //   $('#img_f2').fadeOut();
-    //   $('#img_f3').fadeOut();
-    //   $('#img_f1').fadeIn();
-    //
-    //   $('#feature1').css({
-    //     'opacity': '1',
-    //     'padding-left': '360px'
-    //   });
-    // }
-    //
-    // if (pageYOffset > sec1_height + animation_ready && pageYOffset <= sec2_height + animation_ready) { //sec2
-    //   $('#phone').css({
-    //     'top': sec1_height + 'px'
-    //   });
-    //   $('#img_f1').fadeOut();
-    //   $('#img_f3').fadeOut();
-    //   $('#img_f2').fadeIn();
-    //
-    //   $('#feature2').css({
-    //     'opacity': '1',
-    //     'padding-left': '360px'
-    //   });
-    //   if ($('#icons_num').text() == "2800") {
-    //     new numberCounter("icons_num", 2800);
-    //   }
-    // }
-    //
-    // if (pageYOffset > sec2_height + animation_ready && pageYOffset <= sec3_height + animation_ready) { //sec3
-    //   $('#phone').css({
-    //     'top': sec2_height + 'px'
-    //   });
-    //   $('#img_f1').fadeOut();
-    //   $('#img_f2').fadeOut();
-    //   $('#img_f3').fadeIn();
-    //
-    //   $('#feature3').css({
-    //     'opacity': '1',
-    //     'padding-left': '360px'
-    //   });
-    // }
-    //
-    // if (pageYOffset > sec3_height + animation_ready) { //sec4
-    //   $('#feature_down').css({
-    //     'opacity': '1',
-    //     'margin': '0'
-    //   });
-    //   $('.reviews').delay(800).css({
-    //     'opacity': '1',
-    //     'margin': '0 0 3em 0'
-    //   });
-    // }
+    if (pageYOffset > sec1_height + animation_ready + animation_ready_buffer && pageYOffset <= sec2_height + animation_ready + animation_ready_buffer) { //sec2
+      // $('#phone').css({
+      //   'top': sec1_height + 'px'
+      // });
+      $('#img_f1').fadeOut();
+      $('#img_f3').fadeOut();
+      $('#img_f2').fadeIn();
+
+      $('#feature2').css({
+        'opacity': '1',
+        'padding-left': '360px'
+      });
+      if ($('#icons_num').text() == "3000") {
+        new numberCounter("icons_num", 3000);
+      }
+    }
+
+    if (pageYOffset > sec2_height + animation_ready + animation_ready_buffer && pageYOffset <= sec3_height + animation_ready + animation_ready_buffer) { //sec3
+      // $('#phone').css({
+      //   'top': sec2_height + 'px'
+      // });
+      $('#img_f1').fadeOut();
+      $('#img_f2').fadeOut();
+      $('#img_f3').fadeIn();
+
+      $('#feature3').css({
+        'opacity': '1',
+        'padding-left': '360px'
+      });
+    }
+
+    if (pageYOffset > sec3_height + animation_ready + animation_ready_buffer) { //sec4
+      $('#feature_down').css({
+        'opacity': '1',
+        'margin': '0'
+      });
+      $('.reviews').delay(800).css({
+        'opacity': '1',
+        'margin': '0 0 3em 0'
+      });
+    }
   }
   if ($(window).width() >= 600) {
     scroll_animation();
