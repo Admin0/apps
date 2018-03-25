@@ -197,7 +197,7 @@ header {
 }
 
 #phone {
-  transition: 1s;
+  /* transition: 1s; */
   width: 360px;
   position: absolute;
   right: 50%;
@@ -206,7 +206,7 @@ header {
 .feature_m {
   display: none;
 }
-
+#sec_overview{position:relative;}
 #sec1 {
   background: #e5e5e5;
 }
@@ -240,7 +240,8 @@ header {
   background: #d5d5d5;
 }
 
-#feature3 {
+#feature3,
+#feature_kakao {
   transition: 1s;
   opacity: 0;
   padding-left: 460px;
