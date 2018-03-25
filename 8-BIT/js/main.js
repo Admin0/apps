@@ -114,7 +114,7 @@ $(window).scroll(function() {
     $('#phone').css({
       'position': 'absolute',
       'top': 'initial',
-      'bottom': $('#sec4').outerHeight() -100 + "px"
+      'bottom': $('#sec4').outerHeight() - 100 + "px"
     });
   }
 
@@ -172,7 +172,7 @@ $(window).scroll(function() {
         'opacity': '1',
         'padding-left': '360px'
       });
-    } else if (pageYOffset > sec3_height + animation_ready + animation_ready_buffer && pageYOffset <= sec_kakao_height + animation_ready + animation_ready_buffer * 2) { //sec_kakao
+    } else if (pageYOffset > sec3_height + animation_ready + animation_ready_buffer && pageYOffset <= sec_kakao_height + animation_ready - $('#phone').height() + 200) { //sec_kakao
       phone_position_middle();
 
       $('#img_f1').fadeOut();
@@ -184,7 +184,7 @@ $(window).scroll(function() {
         'opacity': '1',
         'padding-left': '360px'
       });
-    } else if (pageYOffset > sec_kakao_height + animation_ready - 520) { //sec4
+    } else { //sec4
       phone_position_end();
 
       $('#feature_down').css({

@@ -70,7 +70,7 @@ header {
 .sections {
   width: 100%;
   padding: 3em 0;
-  min-height: 300px;
+  min-height: 450px;
 }
 
 #sec0 {
@@ -435,7 +435,7 @@ footer a img:hover {
     max-width: 600px;
     margin: 1em auto;
   }
-  #feature1, #feature2, #feature3 {
+  #feature1, #feature2, #feature3, #feature_kakao {
     padding: 0;
     opacity: 1;
     width: 85%;
