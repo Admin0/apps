@@ -53,9 +53,11 @@
 
     사용 권한: _android.permission.RECORD_AUDIO_
 
-  3. #### 앱에서 쓰이는 이미지를 다운로드 폴더에 저장.
+  3. #### 앱에서 쓰이는 이미지를 다운로드 폴더에 저장
 
     사용 권한: _android.permission.WRITE_EXTERNAL_STORAGE_
+
+    사용 권한: _android.permission.READ_EXTERNAL_STORAGE_
 
 6. ### 개인정보의 파기
 
