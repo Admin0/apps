@@ -4,7 +4,7 @@
 
 ### 8-BIT > 8-BIT KakaoTalk theme
 
-## [Morse](./Morse)
+## [Morse](./morse)
 
 ### Morse > Survival Instinct
 
